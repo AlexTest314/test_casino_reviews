@@ -1,57 +1,46 @@
-import "./style.css";
+import { getData } from "./getData";
+import { updateData } from "./updateData";
 
-document.querySelector("#app").innerHTML = `
-  
-    <header>
-    <div class='head-line'>
-    </div>
-    <div class='headers'>
-    <h1>
-    Online Casino Reviews
-    </h1>
-    
-    <div class='bottom-header'>
-    <h3>
-    All Casinos
-    </h3>
-    <p class='head-info'>3,000 Casinos</p>
-    </div>
-    </div>
-    
-    </header>
-    <main>
-    <div class='casino-card'>
-    <div class='casino-logo'>
-    <image src='./logos/sports_interaction_casino.png' alt='casino-logo'></image>
-    </div>
-      <div class='casino-info'>
-        <div class='info-new'>NEW</div>
-        <div class='info-name'>Sports Interaction Casino Review</div>
-        <div class='flag-rating-info'>
-          <div class='flag'>
-          <image src='./icons/flag-usa.svg' alt='casino-flag'></image>
-          </div>
-          <div class='rate'>
-          4.4
-          </div>
-          <div class='stars'>
-          <image src='./icons/star_rounded.svg' alt='casino-flag'></image>
-          <image src='./icons/star_rounded.svg' alt='casino-flag'></image>
-          <image src='./icons/star_rounded.svg' alt='casino-flag'></image>
-          <image src='./icons/star_rounded.svg' alt='casino-flag'></image>
-          <image src='./icons/star_rounded_empty.svg' alt='casino-flag'></image>
-          </div>
-        </div>
-      </div>
-      <div class='casino-bonus'>
-        <div class='bonus-spins'>20 Free spins</div>
-        <div class='bonus-deposit'>200% First deposit bonus + 250 FS</div>
-      </div>
-    <div class='casino-button'>
-    <button>VISIT</button>
-    </div>
-    </div>
-    </main>
-    
-  
-`;
+let dataCount = 0;
+let actualDataCount = 0;
+
+const dataLoad = async () => {
+  const data = await getData(4);
+  dataCount = data.length;
+  actualDataCount = data.length;
+  updateData(data);
+  if (dataCount >= actualDataCount) {
+    const main = document.getElementById("main");
+    main.insertAdjacentHTML("beforeend", "<div id='load' class='load-button'><p>Load More Casinos (+5)</p></div>");
+  }
+
+  const buttonLoad = document.getElementById("load");
+  buttonLoad.addEventListener("click", dataUpload);
+
+  const copiedCode = () => {
+    const copyText = document.getElementById("myInput");
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    // Alert the copied text
+    document.getElementById("copyPop").hidden = false;
+    setTimeout(() => (document.getElementById("copyPop").hidden = true), 3000);
+  };
+
+  const copyCode = document.getElementById("copyCode");
+  copyCode.addEventListener("click", copiedCode);
+};
+
+window.addEventListener("DOMContentLoaded", dataLoad);
+
+const dataUpload = async () => {
+  dataCount += 5;
+  const data = await getData(dataCount);
+  actualDataCount = data.length;
+  updateData(data, true);
+};

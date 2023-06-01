@@ -4,6 +4,8 @@
   font-family: Roboto sans-serif,  Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 
   color: #404040;
   background-color: #F9FAFA;
@@ -15,37 +17,35 @@
   -webkit-text-size-adjust: 100%;
 }
 
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 h1 {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   text-align: left;
-  font-family: Roboto;
-  font-weight: bold;
-  font-size: 28px;
+  font: 700 28px/32px 'Roboto';
   letter-spacing: 0px;
-  line-height: 32px;
   color: #404040
 }
 h3 {
+  font: 700 18px/24px 'Roboto';
   text-align: left;
-  font-family: Roboto;
-  font-weight: bold;
-  font-size: 18px;
   letter-spacing: 0px;
-  line-height: 24px;
   color: #404040;
   margin-bottom: 0;
   margin-top: 20px;
 }
 
+header {
+  height: max-content;
+}
+
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
   background-color: #F9FAFA;
 }
 
@@ -55,6 +55,10 @@ body {
   width: 100vw;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
 
 
 button {
@@ -64,7 +68,7 @@ button {
   height: 30px;
   width: 68px;
   text-align: center;
-  font: normal normal normal 11px/20px Roboto;
+  font: 400 11px/20px 'Roboto';
   letter-spacing: 0.55px;
   color: #ffffff;
   
@@ -84,22 +88,16 @@ button:hover {
 
 .headers {
   width: 700px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 40px auto 20px auto;
 }
 
 .head-info {
   width: 94px;
   margin-top: 20px;
   margin-bottom: 0;
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 14px;
+  font: 400 14px/20px 'Roboto';
   color: #404040;
   letter-spacing: 0;
-  line-height: 20px;
 }
 
 .bottom-header {
@@ -112,9 +110,7 @@ button:hover {
   width: 700px;
   height: 93px;
   background: #FFFFFF;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
+  margin: 0px auto 10px auto;
   border-radius: 6px;
   box-shadow: 0px 1px 6px #00000029;
 }
@@ -126,15 +122,14 @@ button:hover {
 }
 
 .casino-info {
+  align-self: center;
   width: 233px;
   margin-left: 15px;
 }
 
 .info-new {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 11px;
+  font: 400 11px/18px 'Roboto Condensed';
   letter-spacing: 0;
-  line-height: 18px;
   color: #68CB6C;
   width: 30px;
   height: 18px;
@@ -146,12 +141,9 @@ button:hover {
 }
 
 .info-name {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
+  font: 400 15px/18px 'Roboto';
   color: #429BF4;
   letter-spacing: 0;
-  line-height: 18px;
   text-align: left;
 }
 
@@ -164,18 +156,16 @@ button:hover {
 .flag {
   padding: 0;
   text-align: center;
+  margin-left: -5px;
   height: 14px; 
   line-height: 0;
 }
 
 .rate {
   margin-left: 8px;
-  font-family: 'Roboto' sans-serif;
-  font-weight: 400;
-  font-size: 12px;
+  font: 400 12px/20px 'Roboto';
   color: #8f8f8f;
   letter-spacing: 0;
-  line-height: 20px;
   align-self: center;
 }
 
@@ -185,29 +175,32 @@ button:hover {
 }
 
 .casino-bonus {
+  
   align-self: center;
   width: 239px;
   margin-left: 15px;
 }
 
 .bonus-spins {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 20px;
-  width: 118px;
+  align-self: center;
+  margin-top: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font: 400 13px/20px 'Roboto';
   background: #F3F3F3;
   border-radius: 13px;
   color: #5E6166;
   letter-spacing: 0;
+  width: max-content;
+}
+.bonus-spins:hover:first-child {
+  background: #DAECFE
 }
 
 .bonus-deposit {
+  padding-left: 20px;
   margin-top: 8px;
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 20px;
+  font: 400 13px/20px 'Roboto';
   background: #F3F3F3;
   border-radius: 13px;
   color: #5E6166;
@@ -217,4 +210,264 @@ button:hover {
 .casino-button {
   margin-left: 20px;
   align-self: center;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+}
+
+.popup .popup-content {
+  visibility: hidden;
+  padding-top: 0;
+  box-shadow: 0px 1px 6px #00000029;
+  width: 304px;
+  height: 220px;
+  background-color: #fff;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 135%;
+  left: -25%;
+  margin-left: -60px;
+}
+
+.popup .popup-content::after {
+  content: "";
+  padding: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  box-shadow: inset;
+  border-color: transparent transparent white transparent;
+}
+
+.popup:hover .popup-content {
+  visibility: visible;
+}
+
+.popup-bonus-header {
+  margin: 8px 20px 0px 20px;
+  font-size: 16px;
+}
+
+.popup-welcome {
+  font:700 14px/20px 'Roboto';
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='3' ry='3' stroke='%2300000029' stroke-width='4' stroke-dasharray='1%2c 11' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 3px;
+  margin: 20px 20px 0px 20px;
+  height: 40px;
+  color: #5E6166;
+}
+
+.welcome-text {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.games-allowed {
+  margin: 8px 20px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.games-label {
+  font: 400 14px/20px 'Roboto';
+  color: #878Ca4;
+}
+
+.games {
+  font: 400 14px/20px 'Roboto';
+  flex: 1;
+  color: #5E6166;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game {
+  margin-left: 8px;
+  
+}
+
+.cash-out {
+  margin: 8px 20px 0px 20px;
+  display: flex;
+  
+}
+
+.cash-out-label {
+  font: 400 14px/20px 'Roboto';
+  color: #878Ca4;
+  
+}
+
+.cash-value {
+  font: 400 14px/20px 'Roboto';
+  margin-left: 18px;
+  color: #5E6166;
+}
+
+.min-deposit {
+  font: 400 14px/20px 'Roboto';
+  margin: 8px 20px 0px 20px;
+  display: flex;
+}
+
+.min-deposit-label {
+  font: 400 14px/20px 'Roboto';
+  color: #878Ca4;
+}
+
+.min-deposit-value {
+  font: 400 14px/20px 'Roboto';
+  margin-left: 25px;
+  color: #58c258;;
+}
+
+.load-button {
+  font: 400 14px/18px 'Roboto';
+  margin: 15px auto 0px auto;
+  width: 700px;
+  height: 46px;
+  text-align: center;
+  color: #429BF4;
+  border: 1px solid #429BF4;
+  border-radius: 23px;
+}
+
+.load-button:hover {
+  cursor: pointer;
+  background-color: #429BF4;
+  color: #FFFFFF;
+}
+
+.welcome-text:hover {
+  cursor: pointer;
+}
+
+ .copy-code-content {
+  text-align: center;
+  font: 400 13px/22px 'Roboto';
+  box-shadow: 0px 1px 6px #00000029;
+  background-color: white;
+  color: #5E6166;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 6;
+  bottom: 75%;
+  left: 32%;
+  margin-left: -60px;
+  width: 227px;
+  height: 50px;
+  padding-bottom: 13px;
+}
+
+.my-input {
+  background-color: transparent;
+  color: transparent;
+  outline: none;
+  border: none;
+  z-index: 1;
+}
+
+ .copy-code-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+
+
+@media (max-width: 700px) {
+
+  .head-line {
+    margin-right: 0px;
+  }
+  .headers {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+    align-items: flex-end;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .top-header {
+    align-self: flex-start;
+  }
+
+ 
+
+
+  .bottom-header {
+    justify-content: space-between;
+    align-self: flex-start;
+    flex-grow: 1;
+    width: 100%;
+    margin-right: 20px;
+    
+  }
+
+  .casino-card {
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 270px;
+    width: 91%;
+  }
+
+  .load-button {
+    flex-grow: 1;
+    width: 91%;
+    margin-left: 20px;
+  }
+ 
+  .casino-logo {
+    margin-top: 20px;
+    margin-left: 0px;
+    align-self: center;
+  }
+
+  .casino-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+  }
+
+  .info-new {
+    align-self: center;
+  }
+
+  .info-name {
+    align-self: center;
+  }
+  .flag-rating-info {
+    align-self: center;
+  }
+
+  .casino-bonus {
+    margin-left: 0px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  .casino-button {
+    margin-left: 0px;
+  }
 }

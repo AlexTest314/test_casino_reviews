@@ -1,0 +1,76 @@
+{
+  "casinos": [
+    {
+      "name": "Sports Interaction Casino Review",
+      "isNew": "true",
+      "logo": "./logos/sports_interaction_casino.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["20 Free Spins", "200% First deposit bonus + 250 FS"]
+    },
+    {
+      "name": "21 Dukes Casino Review",
+      "isNew": "false",
+      "logo": "./logos/21_dukes_moons.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["20 Free Spins", "200% First deposit bonus + 250 FS"]
+    },
+    {
+      "name": "AC Casino Review",
+      "isNew": "true",
+      "logo": "./logos/ac_casino.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["50 Free Spins", "200% First deposit bonus"]
+    },
+    {
+      "name": "All Irish Casino Review",
+      "isNew": "false",
+      "logo": "./logos/all_irish_casino.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["100% First deposit bonus + 70 FS"]
+    },
+    {
+      "name": "All Star Games Casino Review",
+      "isNew": "false",
+      "logo": "./logos/all_star_games.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["25 Free Spins", "200% First deposit bonus"]
+    },
+    {
+      "name": "All Star Slots Casino Review",
+      "isNew": "false",
+      "logo": "./logos/all_star_slots.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["20 Free Spins", "300% First deposit bonus"]
+    },
+    {
+      "name": "Sports Interaction Casino Review",
+      "isNew": "false",
+      "logo": "./logos/sports_interaction_casino_old.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["$25 No deposit bonus", "200% First deposit bonus"]
+    },
+    {
+      "name": "VIP Stakes Casino Review",
+      "isNew": "false",
+      "logo": "./logos/vip_stakes.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["20 Free Spins", "200% First deposit bonus + 250 FS"]
+    },
+    {
+      "name": "Jackpot Capital Casino Review",
+      "isNew": "false",
+      "logo": "./logos/capital_casino.png",
+      "flag": "./icons/flag-usa.svg",
+      "rate": "4.4",
+      "bonuses": ["20 Free Spins", "400% First deposit bonus"]
+    }
+  ]
+}
