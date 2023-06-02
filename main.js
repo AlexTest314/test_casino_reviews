@@ -1,5 +1,5 @@
-import { getData } from "./getData";
-import { updateData } from "./updateData";
+import { getData } from "./getData.js";
+import { updateData } from "./updateData.js";
 
 let dataCount = 0;
 let actualDataCount = 0;
